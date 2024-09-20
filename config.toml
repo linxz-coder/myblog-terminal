@@ -1,7 +1,7 @@
 # theme = "terminimal"
 
 # The URL the site will be built for
-base_url = "https://example.com"
+base_url = "https://underfitting.com"
 
 # 标签
 taxonomies = [
