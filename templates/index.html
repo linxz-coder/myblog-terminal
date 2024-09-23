@@ -32,6 +32,8 @@
 
     {%- block extra_head %}
     {% endblock extra_head -%}
+    {# 引入search-bar的css，覆盖第三方样式 #}
+    <link rel="stylesheet" href="/css/search-bar.css">
      {# 引入meili search css#}
      <link
      rel="stylesheet"
@@ -41,8 +43,6 @@
 
 <body class="">
 <div class="container">
-    {# meili search #}
-    <input type="search" id="search-bar-input" placeholder="搜索博客文章..." />
 
     {% block header %}
     <header class="header">
@@ -73,8 +73,8 @@
     </header>
     {% endblock header %}
 
-    <input placeholder="Search"/>
-    <!-- <input aria-label="search input" type="search" id="search-bar-input" placeholder="Search" class="relative" /> -->
+    {# meili search #}
+    <input type="search" id="search-bar-input" placeholder="搜索博客文章..." />
 
     <div class="content">
         {% block content %}
@@ -138,7 +138,7 @@
         </div>
     </footer>
     {% endblock footer %}
-    
+
   {# meili search的js代码 #}
   <script src="https://cdn.jsdelivr.net/npm/docs-searchbar.js@latest/dist/cdn/docs-searchbar.min.js"></script>
   <script>
