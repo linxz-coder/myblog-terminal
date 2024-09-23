@@ -32,10 +32,18 @@
 
     {%- block extra_head %}
     {% endblock extra_head -%}
+     {# 引入meili search css#}
+     <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/docs-searchbar.js@latest/dist/cdn/docs-searchbar.min.css"
+   />
 </head>
 
 <body class="">
 <div class="container">
+    {# meili search #}
+    <input type="search" id="search-bar-input" placeholder="搜索博客文章..." />
+
     {% block header %}
     <header class="header">
         <div class="header__inner">
@@ -64,6 +72,9 @@
         {% endblock header_menu %}
     </header>
     {% endblock header %}
+
+    <input placeholder="Search"/>
+    <!-- <input aria-label="search input" type="search" id="search-bar-input" placeholder="Search" class="relative" /> -->
 
     <div class="content">
         {% block content %}
@@ -127,10 +138,28 @@
         </div>
     </footer>
     {% endblock footer %}
+    
+  {# meili search的js代码 #}
+  <script src="https://cdn.jsdelivr.net/npm/docs-searchbar.js@latest/dist/cdn/docs-searchbar.min.js"></script>
+  <script>
+    docsSearchBar({
+      hostUrl: 'http://127.0.0.1:7700',
+      apiKey: 'VEw9h1k99fgUolpnU6htXtLp20eEFYqte0WRxsWfjaY',
+      indexUid: 'docs',
+      inputSelector: '#search-bar-input',
+      debug: true, // Set debug to true if you want to inspect the dropdown
+      meilisearchOptions: {
+        limit: 10,
+      },
+    })
+  </script>
 
 </div>
 {%- block extra_body %}
 {% endblock extra_body -%}
+
+
+
 </body>
 
 </html>

@@ -1,4 +1,7 @@
 # theme = "terminimal"
+# default_language = "zh"
+
+
 
 # The URL the site will be built for
 base_url = "https://underfitting.com"
@@ -14,6 +17,9 @@ compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
+
+[search]
+index_format = "elasticlunr_javascript" # or "elasticlunr_json"
 
 [markdown]
 # Whether to do syntax highlighting

@@ -1,0 +1,12 @@
+{
+    "index_uid": "docs",
+    "start_urls": ["https://underfitting.com"],
+    "sitemap_urls": ["http://underfitting.com/sitemap.xml"],
+
+    "selectors": {
+      "lvl0": ".post-title",
+      "lvl1": ".post-content",
+      "lvl2": ".post-content h2",
+      "text": "p, li, td, th, pre"
+    }
+  }
